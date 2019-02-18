@@ -13,15 +13,15 @@ const Button = styled.button`
 	margin-top: 3rem;
 	cursor: pointer;
 	:hover {
-		background-color: #fff;
+		background-color: #2E3F8D;
 	}
 `;
 
 
-const LoginSubmit = ({type, text}) => {
+const LoginButton = ({type, text}) => {
 	return (
 		<Button type={type}>{text}</Button>
 	);
 };
 
-export default LoginSubmit;
+export default LoginButton;
