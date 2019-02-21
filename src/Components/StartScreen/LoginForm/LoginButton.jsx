@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-	background-color: #2E3F8D;
+	background-color: ${props => props.backgroundColor};
 	border-radius: 10px;
 	border: none;
 	font-size: 18px;
@@ -10,18 +10,24 @@ const Button = styled.button`
 	padding: 1rem .7rem; 
 	color: #fff;
 	font-weight: 300;
-	margin-top: 3rem;
 	cursor: pointer;
+	transition: all .3s; 
 	:hover {
-		background-color: #fff;
+		transform: scale(1.03);
+		background-color: ${props => props.backgroundColorHover};
 	}
 `;
 
 
-const LoginSubmit = ({type, text}) => {
+const LoginButton = ({type, text, backgroundColor, backgroundColorHover}) => {
 	return (
-		<Button type={type}>{text}</Button>
+		<Button
+			backgroundColor={backgroundColor ? backgroundColor : '#2E3F8D'}
+			backgroundColorHover={backgroundColorHover ? backgroundColorHover : ''}
+			type={type}>
+			{text}
+		</Button>
 	);
 };
 
-export default LoginSubmit;
+export default LoginButton;
