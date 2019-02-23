@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -19,18 +19,32 @@ const Input = styled.input`
     	font-family: 'Lato', sans-serif;
   	}
   	:focus {
-  		font-size: 19px;
+  		font-size: 18px;
   	}
   	:last-of-type {
-  		margin-bottom: 3rem;
+  		margin-bottom: 2rem;
   	}
 `;
 
-const LoginField = ({type, placeholder, id}) => {
-	return (
-		<Input id={id} type={type} placeholder={placeholder}/>
-	);
-};
+class LoginField extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			value: ''
+		};
+	}
+	handleChange = (e) => {
+		this.setState({
+			value: e.target.value
+		});
+	};
+	render() {
+		const {name, type, placeholder, id} = this.props;
+		return (
+			<Input onChange={this.handleChange} name={name} id={id} type={type} placeholder={placeholder}/>
+		);
+	}
+}
 
 LoginField.propTypes = {
 	type: PropTypes.string.isRequired,
