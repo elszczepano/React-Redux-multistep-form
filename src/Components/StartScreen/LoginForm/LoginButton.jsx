@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-	background-color: ${props => props.backgroundColor};
+	background-color: ${({backgroundColor}) => backgroundColor};
 	border-radius: 10px;
 	border: none;
 	font-size: 18px;
@@ -12,9 +12,10 @@ const Button = styled.button`
 	font-weight: 300;
 	cursor: pointer;
 	transition: all .3s; 
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 	:hover {
 		transform: scale(1.03);
-		background-color: ${props => props.backgroundColorHover};
+		background-color: ${({backgroundColorHover}) => backgroundColorHover};
 	}
 `;
 
