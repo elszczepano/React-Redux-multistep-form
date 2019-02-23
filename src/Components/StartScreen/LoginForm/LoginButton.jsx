@@ -20,9 +20,10 @@ const Button = styled.button`
 `;
 
 
-const LoginButton = ({type, text, backgroundColor, backgroundColorHover}) => {
+const LoginButton = ({type, text, backgroundColor, backgroundColorHover, onClick}) => {
 	return (
 		<Button
+			onClick={onClick}
 			backgroundColor={backgroundColor ? backgroundColor : '#2E3F8D'}
 			backgroundColorHover={backgroundColorHover ? backgroundColorHover : ''}
 			type={type}>
