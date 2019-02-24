@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Input = styled.input`
-	background-color: #F1F1F2;
+	background-color: ${({theme}) => theme.colors.lightGrey};
 	border-radius: 10px;
 	border: none;
 	font-size: 20px;
 	min-height: 23px;
 	outline: none;
 	padding: 1rem .7rem; 
-	color: #707070;
-	font-weight: 300;
+	color: ${({theme}) => theme.colors.darkGrey};
+	font-weight: ${({theme}) => theme.font.thin};
 	transition: .3s all;
 	::-webkit-input-placeholder {
-    	color: #C3C3C4;
-    	font-weight: 300;
+    	color: ${({theme}) => theme.colors.grey};
+    	font-weight: ${({theme}) => theme.font.thin};
     	font-family: 'Lato', sans-serif;
   	}
   	:focus {

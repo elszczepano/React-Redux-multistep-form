@@ -8,8 +8,8 @@ const Button = styled.button`
 	font-size: 18px;
 	outline: none;
 	padding: 1rem .7rem; 
-	color: #fff;
-	font-weight: 300;
+	color: ${({theme}) => theme.colors.white};
+	font-weight: ${({theme}) => theme.font.thin};
 	cursor: pointer;
 	transition: all .3s; 
 	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
@@ -24,7 +24,7 @@ const LoginButton = ({type, text, backgroundColor, backgroundColorHover, onClick
 	return (
 		<Button
 			onClick={onClick}
-			backgroundColor={backgroundColor ? backgroundColor : '#2E3F8D'}
+			backgroundColor={backgroundColor ? backgroundColor : ({theme}) => theme.colors.primaryBlue}
 			backgroundColorHover={backgroundColorHover ? backgroundColorHover : ''}
 			type={type}>
 			{text}

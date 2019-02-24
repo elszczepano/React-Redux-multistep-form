@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const Message = styled.p`
 	margin-top: 2rem;
-	color: #D42222;
-	font-weight: bold;
+	color: ${({theme}) => theme.colors.primaryRed};
+	font-weight: ${({theme}) => theme.font.bold};
 	font-size: 16px;
 	text-align: center;
 `;
