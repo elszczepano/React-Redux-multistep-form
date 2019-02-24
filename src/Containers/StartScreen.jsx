@@ -3,6 +3,7 @@ import LoginForm from '../Components/StartScreen/LoginForm/LoginForm';
 import StartScreenFooter from '../Components/StartScreen/StartScreenFooter';
 import StartScreenLogo from '../Components/StartScreen/StartScreenLogo';
 import RegisterForm from '../Components/StartScreen/RegisterForm/RegisterForm';
+import Layout from '../layout/Layout';
 
 class StartScreen extends Component {
 	constructor(props) {
@@ -18,11 +19,11 @@ class StartScreen extends Component {
 	};
 	render() {
 		return (
-			<>
+			<Layout>
 				<StartScreenLogo/>
 				{this.state.registerMode ? <RegisterForm/> : <LoginForm switchMode={this.switchMode}/>}
 				<StartScreenFooter/>
-			</>
+			</Layout>
 		);
 	}
 }
