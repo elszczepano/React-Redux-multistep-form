@@ -1,0 +1,26 @@
+import React from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const IconWrapper = styled.div`
+	color: ${({theme, completed}) => completed ? theme.colors.white : theme.colors.primaryBlue};
+	background-color: ${({theme, completed}) => completed ? theme.colors.primaryBlue : theme.colors.white};
+	border: ${({theme, completed}) => completed ? 'none' : `1px solid ${theme.colors.primaryBlue}`};
+	width: 50px;
+	height: 50px;
+	font-size: 20px;
+	border-radius: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+const RegisterIcon = ({icon, completed}) => {
+	return (
+		<IconWrapper complete={completed}>
+			<FontAwesomeIcon icon={icon} />
+		</IconWrapper>
+	);
+};
+
+export default RegisterIcon;
