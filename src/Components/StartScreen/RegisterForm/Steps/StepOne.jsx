@@ -17,12 +17,6 @@ const FieldsContainer = styled.div`
 `;
 
 class StepOne extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			step: 1
-		};
-	}
 	render() {
 		return (
 			<Container>
@@ -31,7 +25,7 @@ class StepOne extends Component {
 					<RegisterField type='email' placeholder='Your email' id='email'/>
 					<RegisterField type='date' placeholder='Your birth date' id='birthdate'/>
 				</FieldsContainer>
-				<RegisterButton step={this.state.step}/>
+				<RegisterButton step={1}/>
 			</Container>
 		);
 	}
