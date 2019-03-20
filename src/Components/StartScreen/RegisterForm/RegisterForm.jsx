@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import RegisterProgressTracker from './RegisterProgressTracker';
+import StepOne from './Steps/StepOne';
 
 const Container = styled.form`
 	display: grid;
@@ -14,6 +15,7 @@ class RegisterForm extends Component {
 		return (
 			<Container>
 				<RegisterProgressTracker/>
+				<StepOne/>
 			</Container>
 		);
 	}
