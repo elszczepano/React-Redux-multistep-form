@@ -21,9 +21,6 @@ const Input = styled.input`
   	:focus {
   		font-size: 18px;
   	}
-  	:last-of-type {
-  		margin-bottom: 2rem;
-  	}
 `;
 
 class RegisterField extends Component {
