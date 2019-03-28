@@ -14,6 +14,11 @@ const IconWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: .3s transform;
+	cursor: pointer;
+	&:hover {
+		transform: scale(1.05);
+	}
 `;
 
 const RegisterIcon = ({icon, completed}) => {
