@@ -14,20 +14,21 @@ const Button = styled.button`
 	cursor: pointer;
 	transition: all .3s; 
 	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-	:hover {
+	&:hover {
 		transform: scale(1.03);
 		background-color: ${({theme}) => theme.colors.primaryDarkBlue};
 	}
 `;
 
-const RegisterButton = ({step}) => {
+const RegisterButton = ({step, verifyStep}) => {
 	return (
-		<Button>{step === 3 ? 'Register' : 'Next'}</Button>
+		<Button onClick={verifyStep}>{step === 2 ? 'Register' : 'Next'}</Button>
 	);
 };
 
 RegisterButton.propTypes = {
-	step: PropTypes.number.isRequired
+	step: PropTypes.number.isRequired,
+	verifyStep: PropTypes.func
 };
 
 export default RegisterButton;

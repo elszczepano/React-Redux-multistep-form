@@ -23,7 +23,7 @@ const IconWrapper = styled.div`
 
 const RegisterIcon = ({icon, completed}) => {
 	return (
-		<IconWrapper complete={completed}>
+		<IconWrapper completed={completed}>
 			<FontAwesomeIcon icon={icon} />
 		</IconWrapper>
 	);

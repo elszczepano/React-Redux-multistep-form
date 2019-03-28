@@ -30,7 +30,7 @@ class RegisterField extends Component {
 			value: ''
 		};
 	}
-	handleChange = (e) => {
+	handleChange = e => {
 		this.setState({
 			value: e.target.value
 		});
@@ -44,6 +44,7 @@ class RegisterField extends Component {
 }
 
 RegisterField.propTypes = {
+	name: PropTypes.string,
 	type: PropTypes.string.isRequired,
 	placeholder: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,

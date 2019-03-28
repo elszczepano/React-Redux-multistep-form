@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import RegisterProgressTracker from './RegisterProgressTracker';
 import StepOne from './Steps/StepOne';
+import StepTwo from './Steps/StepTwo';
+import StepThree from './Steps/StepThree';
 
 const Container = styled.form`
 	display: grid;
@@ -11,11 +13,32 @@ const Container = styled.form`
 `;
 
 class RegisterForm extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentStep: 1
+		};
+	}
+	renderStep = () => {
+		switch(this.state.currentStep) {
+		case 2:
+			return <StepTwo/>;
+		case 3:
+			return <StepThree/>;
+		default:
+			return <StepOne verifyStepOne={this.verifyStepOne}/>;
+		}
+	};
+	verifyStepOne = e => {
+		e.preventDefault();
+		//TODO validate step one fields
+		this.setState({currentStep: 2});
+	};
 	render() {
 		return (
 			<Container>
-				<RegisterProgressTracker/>
-				<StepOne/>
+				<RegisterProgressTracker currentStep={this.state.currentStep}/>
+				{this.renderStep()}
 			</Container>
 		);
 	}
