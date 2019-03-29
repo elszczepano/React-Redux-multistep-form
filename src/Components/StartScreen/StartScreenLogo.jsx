@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../../assets/FindMates_logo.png';
+import logo from '../../assets/FindMates_logo.png';
 
 const Img = styled.img`
 	width: 50%;
@@ -9,7 +9,7 @@ const Img = styled.img`
 	user-select: none;
 `;
 
-const LoginLogo = () => {
+const StartScreenLogo = () => {
 	return (
 		<>
 			<Img src={logo} alt=""/>
@@ -17,4 +17,4 @@ const LoginLogo = () => {
 	);
 };
 
-export default LoginLogo;
+export default StartScreenLogo;

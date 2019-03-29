@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Footer = styled.footer`
-	position: absolute;
-	bottom: 0;
+	margin-top: 50px;
 	text-align: center;
 	width: 100%;
 	padding: 1rem 0;
@@ -15,9 +14,10 @@ const Footer = styled.footer`
 `;
 
 const StartScreenFooter = () => {
+	const date = new Date();
 	return (
 		<Footer>
-			FindMates | Copyright <sup>&copy;</sup> 2019
+			FindMates | Copyright <sup>&copy;</sup> {date.getFullYear()}
 		</Footer>
 	);
 };
