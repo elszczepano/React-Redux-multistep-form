@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -23,31 +23,18 @@ const Input = styled.input`
   	}
 `;
 
-class RegisterField extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			value: ''
-		};
-	}
-	handleChange = e => {
-		this.setState({
-			value: e.target.value
-		});
-	};
-	render() {
-		const {name, type, placeholder, id} = this.props;
-		return (
-			<Input onChange={this.handleChange} name={name} id={id} type={type} placeholder={placeholder}/>
-		);
-	}
-}
+const RegisterField = ({name, type, placeholder, id, handleChange}) => {
+	return (
+		<Input onChange={handleChange} name={name} id={id} type={type} placeholder={placeholder}/>
+	);
+};
 
 RegisterField.propTypes = {
 	name: PropTypes.string,
 	type: PropTypes.string.isRequired,
 	placeholder: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,
+	handleChange: PropTypes.func.isRequired
 };
 
 export default RegisterField;
