@@ -9,6 +9,7 @@ const Container = styled.form`
 	grid-template-rows: 1fr;
 	grid-row-gap: 1rem;
 	padding: 0 1.5rem;
+	margin-bottom: 8rem;
 `;
 
 class LoginForm extends Component {

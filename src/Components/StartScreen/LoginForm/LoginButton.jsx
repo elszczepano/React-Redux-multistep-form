@@ -7,7 +7,7 @@ const Button = styled.button`
 	border: none;
 	font-size: 18px;
 	outline: none;
-	padding: 1rem .7rem; 
+	padding: 1rem .7rem;
 	color: ${({theme}) => theme.colors.white};
 	font-weight: ${({theme}) => theme.font.thin};
 	cursor: pointer;
