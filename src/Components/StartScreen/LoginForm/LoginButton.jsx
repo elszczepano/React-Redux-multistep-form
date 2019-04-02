@@ -19,7 +19,6 @@ const Button = styled.button`
 	}
 `;
 
-
 const LoginButton = ({type, text, backgroundColor, backgroundColorHover, onClick}) => {
 	return (
 		<Button

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import LoginField from './LoginField';
 import LoginButton from './LoginButton';
@@ -26,7 +26,7 @@ class LoginForm extends Component {
 				<LoginField name="password" type="password" placeholder="Password" id="password"/>
 				<LoginButton backgroundColor="#2E3F8D" backgroundColorHover="#1C4E7C" type="submit" text="Sign in"/>
 				<LoginButton onClick={this.props.switchMode} backgroundColor="#226D4F" backgroundColorHover="#115C3E" type="button" text="Create new account"/>
-				{ this.state.errorMessage ? <LoginErrorMessage message={this.state.errorMessage}/> : null }
+				{this.state.errorMessage ? <LoginErrorMessage message={this.state.errorMessage}/> : null}
 			</Container>
 		);
 	}
