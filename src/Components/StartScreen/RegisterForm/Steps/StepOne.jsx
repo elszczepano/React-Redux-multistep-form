@@ -27,16 +27,13 @@ class StepOne extends Component {
 			birthDate: ''
 		};
 	}
-	handleChange = e => {
-		this.setState({[e.target.id]: e.target.value});
-	};
 	render() {
 		return (
 			<Container>
 				<FieldsContainer>
-					<RegisterField handleChange={this.handleChange} type='text' placeholder='Your name' id='name'/>
-					<RegisterField handleChange={this.handleChange} type='email' placeholder='Your email' id='email'/>
-					<RegisterField handleChange={this.handleChange} type='date' placeholder='Your birth date' id='birthDate'/>
+					<RegisterField type='text' placeholder='Your name' id='name'/>
+					<RegisterField type='email' placeholder='Your email' id='email'/>
+					<RegisterField type='date' placeholder='Your birth date' id='birthDate'/>
 				</FieldsContainer>
 				<RegisterButton verifyStep={this.props.verifyStepOne} step={this.state.step}/>
 			</Container>
