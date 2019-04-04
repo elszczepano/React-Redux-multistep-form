@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Button = styled.button`
+	font-family: 'Lato', sans-serif;
 	background-color: ${({theme}) => theme.colors.primaryBlue};
 	border-radius: 10px;
 	border: none;
@@ -10,7 +11,6 @@ const Button = styled.button`
 	outline: none;
 	padding: 1rem .7rem; 
 	color: ${({theme}) => theme.colors.white};
-	font-weight: ${({theme}) => theme.font.thin};
 	cursor: pointer;
 	transition: all .3s; 
 	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
@@ -22,7 +22,7 @@ const Button = styled.button`
 
 const RegisterButton = ({step, verifyStep}) => {
 	return (
-		<Button onClick={verifyStep}>{step === 2 ? 'Register' : 'Next'}</Button>
+		<Button onClick={verifyStep}>{step === 3 ? 'Register' : 'Next'}</Button>
 	);
 };
 
