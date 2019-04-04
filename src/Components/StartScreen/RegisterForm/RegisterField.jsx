@@ -65,8 +65,7 @@ RegisterField.propTypes = {
 	name: PropTypes.string,
 	type: PropTypes.string.isRequired,
 	placeholder: PropTypes.string.isRequired,
-	id: PropTypes.string.isRequired,
-	handleChange: PropTypes.func.isRequired
+	id: PropTypes.string.isRequired
 };
 
 export default RegisterField;
