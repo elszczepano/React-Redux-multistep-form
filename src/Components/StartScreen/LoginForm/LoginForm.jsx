@@ -20,12 +20,13 @@ class LoginForm extends Component {
 		};
 	};
 	render() {
+
 		return (
 			<Container>
 				<LoginField name="email" type="email" placeholder="Email" id="email"/>
 				<LoginField name="password" type="password" placeholder="Password" id="password"/>
-				<LoginButton backgroundColor="#2E3F8D" backgroundColorHover="#1C4E7C" type="submit" text="Sign in"/>
-				<LoginButton onClick={this.props.switchMode} backgroundColor="#226D4F" backgroundColorHover="#115C3E" type="button" text="Create new account"/>
+				<LoginButton backgroundColor={({theme}) => theme.colors.primaryBlue} backgroundColorHover={({theme}) => theme.colors.primaryDarkBlue} type="submit" text="Sign in"/>
+				<LoginButton onClick={this.props.switchMode} backgroundColor={({theme}) => theme.colors.primaryGreen} backgroundColorHover={({theme}) => theme.colors.primaryDarkGreen} type="button" text="Create new account"/>
 				{this.state.errorMessage ? <LoginErrorMessage message={this.state.errorMessage}/> : null}
 			</Container>
 		);
