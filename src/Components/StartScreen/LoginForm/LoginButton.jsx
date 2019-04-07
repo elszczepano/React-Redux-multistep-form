@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Button = styled.button`
 	font-family: 'Lato', sans-serif;
 	background-color: ${({backgroundColor}) => backgroundColor};
-	border-radius: 10px;
 	border: none;
 	font-size: 18px;
 	outline: none;

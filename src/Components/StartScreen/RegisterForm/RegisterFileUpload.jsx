@@ -10,8 +10,7 @@ const Input = styled.input`
 	z-index: -1;
 `;
 const Label = styled.label`
-	background-color: ${({theme}) => theme.colors.primaryGreen};
-	border-radius: 10px;
+	background-color: ${({theme}) => theme.colors.primaryGreen}
 	border: none;
 	font-size: 18px;
 	outline: none;

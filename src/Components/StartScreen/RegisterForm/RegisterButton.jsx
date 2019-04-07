@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const Button = styled.button`
 	font-family: 'Lato', sans-serif;
 	background-color: ${({theme}) => theme.colors.primaryBlue};
-	border-radius: 10px;
 	border: none;
 	font-size: 18px;
 	outline: none;
