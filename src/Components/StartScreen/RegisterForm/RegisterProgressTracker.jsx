@@ -10,18 +10,17 @@ const Container = styled.div`
 
 class RegisterProgressTracker extends Component {
 	render() {
-		const {currentStep, finishedStep} = this.props;
+		const {currentStep} = this.props;
 		return (
 			<Container>
 				<RegisterIcon icon="user" completed={true}/>
 				<RegisterIcon icon="file-alt" completed={currentStep > 1}/>
-				<RegisterIcon icon="check" completed={currentStep > 2}/>
+				<RegisterIcon icon="file-image" completed={currentStep > 2}/>
 			</Container>
 		);
 	}
 }
 RegisterProgressTracker.propTypes = {
-	finishedStep: PropTypes.number.isRequired,
 	currentStep: PropTypes.number.isRequired
 };
 
