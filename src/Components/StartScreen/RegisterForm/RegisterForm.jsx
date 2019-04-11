@@ -17,8 +17,7 @@ class RegisterForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentStep: 1,
-			finishedStep: 1
+			currentStep: 1
 		};
 	}
 	renderStep = () => {
@@ -37,30 +36,27 @@ class RegisterForm extends Component {
 		e.preventDefault();
 		//TODO validate step one fields
 		this.setState({
-			currentStep: 2,
-			finishedStep: 2
+			currentStep: 2
 		});
 	};
 	verifyStepTwo = e => {
 		e.preventDefault();
 		//TODO validate step one fields
 		this.setState({
-			currentStep: 3,
-			finishedStep: 3
+			currentStep: 3
 		});
 	};
 	sendRegisterRequest = e => {
 		e.preventDefault();
 		//TODO validate step one fields
 		this.setState({
-			currentStep: 4,
-			finishedStep: 4
+			currentStep: 4
 		});
 	};
 	render() {
 		return (
 			<Container>
-				<RegisterProgressTracker currentStep={this.state.currentStep} finishedStep={this.state.finishedStep}/>
+				<RegisterProgressTracker toggleStep={this.toggleStep} currentStep={this.state.currentStep}/>
 				{this.renderStep()}
 			</Container>
 		);
