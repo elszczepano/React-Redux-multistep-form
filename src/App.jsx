@@ -1,18 +1,23 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheck, faUser, faFileAlt } from '@fortawesome/free-solid-svg-icons';
-
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import rootReducer from './reducers';
+import {faUser, faFileAlt, faEye, faEyeSlash, faUserCircle, faFileImage} from '@fortawesome/free-solid-svg-icons';
 import StartScreen from './Containers/StartScreen';
+library.add(faUser, faFileAlt, faEye, faEyeSlash, faUserCircle, faFileImage);
 
-library.add(faCheck, faUser, faFileAlt);
+const store = createStore(rootReducer);
 
 class App extends Component {
 	render() {
 		return (
-			<Router>
-				<Route exact path="/" component={StartScreen} />
-			</Router>
+			<Provider store={store}>
+				<Router>
+					<Route exact path="/" component={StartScreen} />
+				</Router>
+			</Provider>
 		);
 	}
 }

@@ -2,14 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
+	font-family: 'Lato', sans-serif;
 	background-color: ${({backgroundColor}) => backgroundColor};
-	border-radius: 10px;
 	border: none;
 	font-size: 18px;
 	outline: none;
 	padding: 1rem .7rem;
 	color: ${({theme}) => theme.colors.white};
-	font-weight: ${({theme}) => theme.font.thin};
 	cursor: pointer;
 	transition: all .3s; 
 	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
@@ -32,4 +31,3 @@ const LoginButton = ({type, text, backgroundColor, backgroundColorHover, onClick
 };
 
 export default LoginButton;
-

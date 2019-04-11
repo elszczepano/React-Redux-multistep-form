@@ -4,6 +4,7 @@ import RegisterProgressTracker from './RegisterProgressTracker';
 import StepOne from './Steps/StepOne';
 import StepTwo from './Steps/StepTwo';
 import StepThree from './Steps/StepThree';
+import StepFour from './Steps/StepFour';
 
 const Container = styled.form`
 	display: grid;
@@ -22,9 +23,11 @@ class RegisterForm extends Component {
 	renderStep = () => {
 		switch(this.state.currentStep) {
 		case 2:
-			return <StepTwo/>;
+			return <StepTwo verifyStepTwo={this.verifyStepTwo}/>;
 		case 3:
-			return <StepThree/>;
+			return <StepThree verifyStepThree={this.sendRegisterRequest}/>;
+		case 4:
+			return <StepFour/>;
 		default:
 			return <StepOne verifyStepOne={this.verifyStepOne}/>;
 		}
@@ -32,12 +35,28 @@ class RegisterForm extends Component {
 	verifyStepOne = e => {
 		e.preventDefault();
 		//TODO validate step one fields
-		this.setState({currentStep: 2});
+		this.setState({
+			currentStep: 2
+		});
+	};
+	verifyStepTwo = e => {
+		e.preventDefault();
+		//TODO validate step one fields
+		this.setState({
+			currentStep: 3
+		});
+	};
+	sendRegisterRequest = e => {
+		e.preventDefault();
+		//TODO validate step one fields
+		this.setState({
+			currentStep: 4
+		});
 	};
 	render() {
 		return (
 			<Container>
-				<RegisterProgressTracker currentStep={this.state.currentStep}/>
+				<RegisterProgressTracker toggleStep={this.toggleStep} currentStep={this.state.currentStep}/>
 				{this.renderStep()}
 			</Container>
 		);

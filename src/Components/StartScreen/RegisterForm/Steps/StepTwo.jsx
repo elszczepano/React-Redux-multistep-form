@@ -35,7 +35,7 @@ class StepTwo extends Component {
 					<RegisterSelect id='gender' placeholder='Your gender' values={this.state.genders}/>
 					<RegisterSelect id='purpose' placeholder='I am here for...' values={this.state.purposes}/>
 				</FieldsContainer>
-				<RegisterButton step={this.state.step}/>
+				<RegisterButton verifyStep={this.props.verifyStepTwo} step={this.state.step}/>
 			</Container>
 		);
 	}
