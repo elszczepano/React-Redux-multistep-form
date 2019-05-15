@@ -1,4 +1,4 @@
-const registerForm = (state = [], action) => {
+const registerForm = (state = {}, action) => {
 	switch(action.type) {
 	case 'ADD_REGISTER_DETAIL':
 		return;
