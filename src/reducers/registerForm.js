@@ -1,11 +1,16 @@
-const registerForm = (state = {}, action) => {
+const initialForm = {
+	details: {},
+	step: 1
+};
+
+const registerForm = (state = initialForm, action) => {
 	switch(action.type) {
 	case 'ADD_REGISTER_DETAIL':
-		return;
-	case 'EDIT_REGISTER_DETAIL':
-		return;
+		return {
+			...state, details: Object.assign(state.details, action.details)
+		};
 	case 'CLEAR_REGISTER_FORM':
-		return {};
+		return initialForm;
 	case 'INCREMENT_STEP':
 		return;
 	default:
