@@ -37,6 +37,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@storybook/react": "^5.0.5"
+    "@storybook/react": "^5.0.5",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
