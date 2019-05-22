@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import RegisterField from '../RegisterField';
-import RegisterButton from '../RegisterButton';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import RegisterField from '../RegisterField';
+import RegisterButton from '../RegisterButton';
+import ErrorField from '../../ErrorField';
 
 const Container = styled.div`
 	display: flex;
@@ -24,25 +25,46 @@ class StepOne extends Component {
 			step: 1,
 			name: '',
 			email: '',
-			birthDate: ''
+			birthDate: '',
+			errors: {
+				name: '',
+				email: '',
+				birthDate: ''
+			}
 		};
 	}
+
+	verifyStepOne = event => {
+		event.preventDefault();
+
+
+	};
+
+	handleChange = event => {
+		this.setState({
+			[event.target.id]: event.target.value
+		});
+	};
+
 	render() {
 		return (
 			<Container>
 				<FieldsContainer>
-					<RegisterField type='text' placeholder='Your name' id='name'/>
-					<RegisterField type='email' placeholder='Your email' id='email'/>
-					<RegisterField type='date' placeholder='Your birth date' id='birthDate'/>
+					<RegisterField handleChange={this.handleChange} type='text' placeholder='Your name' id='name'/>
+					{this.state.errors.name ? <ErrorField message={this.state.errors.name} /> : null }
+					<RegisterField handleChange={this.handleChange} type='email' placeholder='Your email' id='email'/>
+					{this.state.errors.email ? <ErrorField message={this.state.errors.email} /> : null }
+					<RegisterField handleChange={this.handleChange} type='date' placeholder='Your birth date' id='birthDate'/>
+					{this.state.errors.birthDate ? <ErrorField message={this.state.errors.birthDate} /> : null }
 				</FieldsContainer>
-				<RegisterButton verifyStep={this.props.verifyStepOne} step={this.state.step}/>
+				<RegisterButton verifyStep={this.verifyStepOne} step={this.state.step}/>
 			</Container>
 		);
 	}
 }
 
 StepOne.propTypes = {
-	verifyStepOne: PropTypes.func.isRequired
+	incrementStep: PropTypes.func.isRequired
 };
 
 export default StepOne;

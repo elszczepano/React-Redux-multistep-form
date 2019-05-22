@@ -39,7 +39,6 @@ class RegisterField extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: '',
 			passwordShown: false,
 			type: this.props.type || 'text'
 		};
