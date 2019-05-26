@@ -13,6 +13,7 @@ const Button = styled.button`
 	cursor: pointer;
 	transition: all .3s; 
 	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+	margin-top: 20px;
 	&:hover {
 		transform: scale(1.03);
 		background-color: ${({theme}) => theme.colors.primaryDarkBlue};
