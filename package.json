@@ -37,6 +37,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@storybook/react": "^5.0.5"
+    "@storybook/react": "^5.0.11"
   }
 }
