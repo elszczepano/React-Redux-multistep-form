@@ -1,15 +1,17 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	"short_name": "FindMates",
+	"name": "FindMates",
+	"icons": [
+
+		{
+			"src": "/src/assets/FindMates_logo.png",
+			"type": "image/png",
+			"sizes": "600x600"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#FFF",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#4898F6"
 }
