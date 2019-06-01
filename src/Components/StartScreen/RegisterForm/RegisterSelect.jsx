@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `;
 const Select = styled.select`
 	background-color: ${({theme}) => theme.colors.lightGrey};
-	border-radius: 10px;
+	border-radius: 3px;
 	border: none;
 	font-size: 20px;
 	min-height: 23px;

@@ -3,21 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@types/jest": "23.3.12",
-    "@types/node": "10.12.18",
-    "@types/react": "16.7.18",
-    "@types/react-dom": "16.0.11",
-
+    "@types/jest": "24.0.13",
+    "@types/node": "12.0.4",
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
     "axios": "^0.18.0",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^7.0.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.8",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
     "redux": "^4.0.1",
     "styled-components": "^4.2.0"
   },
@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --quiet '**/*.+(js|jsx)'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +38,23 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@storybook/react": "^5.0.5"
-  }
+    "@storybook/react": "^5.0.11",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.+(js|jsx)": [
+      "eslint --quiet"
+    ]
+  },
+  "eslintIgnore": [
+    "**/node_modules/**",
+    "**/build/**"
+  ]
 }

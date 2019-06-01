@@ -20,43 +20,30 @@ class RegisterForm extends Component {
 			currentStep: 1
 		};
 	}
+
 	renderStep = () => {
 		switch(this.state.currentStep) {
 		case 2:
-			return <StepTwo verifyStepTwo={this.verifyStepTwo}/>;
+			return <StepTwo incrementStep={this.incrementStep}/>;
 		case 3:
-			return <StepThree verifyStepThree={this.sendRegisterRequest}/>;
+			return <StepThree incrementStep={this.incrementStep}/>;
 		case 4:
 			return <StepFour/>;
 		default:
-			return <StepOne verifyStepOne={this.verifyStepOne}/>;
+			return <StepOne incrementStep={this.incrementStep}/>;
 		}
 	};
-	verifyStepOne = e => {
-		e.preventDefault();
-		//TODO validate step one fields
+
+	incrementStep = () => {
 		this.setState({
-			currentStep: 2
+			currentStep: this.state.currentStep + 1
 		});
 	};
-	verifyStepTwo = e => {
-		e.preventDefault();
-		//TODO validate step one fields
-		this.setState({
-			currentStep: 3
-		});
-	};
-	sendRegisterRequest = e => {
-		e.preventDefault();
-		//TODO validate step one fields
-		this.setState({
-			currentStep: 4
-		});
-	};
+
 	render() {
 		return (
 			<Container>
-				<RegisterProgressTracker toggleStep={this.toggleStep} currentStep={this.state.currentStep}/>
+				<RegisterProgressTracker currentStep={this.state.currentStep}/>
 				{this.renderStep()}
 			</Container>
 		);
