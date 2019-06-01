@@ -15,6 +15,7 @@
 		"react"
 	],
 	"rules": {
+		"no-useless-escape": "off",
 		"indent": [
 			"error",
 			"tab"
