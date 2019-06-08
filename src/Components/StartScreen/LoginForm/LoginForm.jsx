@@ -12,6 +12,13 @@ const Container = styled.form`
 	${({isErrorDisplayed}) => !isErrorDisplayed ? 'margin-bottom: 8rem' : null}
 `;
 
+const ForgotPasswordLink = styled.a`
+	color: ${({theme}) => theme.colors.grey};
+	text-align: center;
+	text-decoration: underline;
+	margin-top: .5rem;
+`;
+
 class LoginForm extends Component {
 	constructor(props) {
 		super(props);
@@ -58,6 +65,7 @@ class LoginForm extends Component {
 				<LoginField handleChange={this.handleChange} name="password" type="password" placeholder="Password" id="password"/>
 				<LoginButton handleSubmit={this.handleSubmit} backgroundColor={({theme}) => theme.colors.primaryBlue} backgroundColorHover={({theme}) => theme.colors.primaryDarkBlue} type="submit" text="Sign in"/>
 				<LoginButton onClick={this.props.switchMode} backgroundColor={({theme}) => theme.colors.primaryGreen} backgroundColorHover={({theme}) => theme.colors.primaryDarkGreen} type="button" text="Create new account"/>
+				<ForgotPasswordLink href='/'>I don't remember my password</ForgotPasswordLink>
 				{this.state.errorMessage ? <LoginErrorMessage message={this.state.errorMessage}/> : null}
 			</Container>
 		);
