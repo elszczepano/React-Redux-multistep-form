@@ -4,7 +4,7 @@
 	"icons": [
 
 		{
-			"src": "/src/assets/FindMates_logo.png",
+			"src": "FindMates_logo.png",
 			"type": "image/png",
 			"sizes": "600x600"
 		}
