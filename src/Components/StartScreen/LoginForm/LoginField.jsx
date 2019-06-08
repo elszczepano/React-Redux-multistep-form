@@ -47,11 +47,6 @@ class LoginField extends Component {
 			type: this.props.type || 'text'
 		};
 	}
-	handleChange = e => {
-		this.setState({
-			value: e.target.value
-		});
-	};
 	handleChangeType = () => {
 		this.setState({
 			passwordShown: !this.state.passwordShown,
@@ -59,10 +54,10 @@ class LoginField extends Component {
 		});
 	};
 	render() {
-		const {name, placeholder, id} = this.props;
+		const {name, placeholder, id, handleChange} = this.props;
 		return (
 			<Wrapper>
-				<Input onChange={this.handleChange} name={name} id={id} type={this.state.type} placeholder={placeholder}/>
+				<Input onChange={handleChange} name={name} id={id} type={this.state.type} placeholder={placeholder}/>
 				{this.props.type === 'password' ? <Icon onClick={this.handleChangeType} icon={this.state.passwordShown ? 'eye-slash' : 'eye'}/> : null}
 			</Wrapper>
 		);
@@ -73,6 +68,7 @@ LoginField.propTypes = {
 	type: PropTypes.string.isRequired,
 	placeholder: PropTypes.string.isRequired,
 	id: PropTypes.string.isRequired,
+	handleChange: PropTypes.func.isRequired
 };
 
 export default LoginField;

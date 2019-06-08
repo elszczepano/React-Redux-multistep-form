@@ -9,23 +9,54 @@ const Container = styled.form`
 	grid-template-rows: 1fr;
 	grid-row-gap: 1rem;
 	padding: 0 1.5rem;
-	margin-bottom: 8rem;
+	${({isErrorDisplayed}) => !isErrorDisplayed ? 'margin-bottom: 8rem' : null}
 `;
 
 class LoginForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			email: '',
+			password: '',
 			errorMessage: ''
 		};
 	};
+
+	handleChange = event => {
+		this.setState({
+			[event.target.id]: event.target.value
+		});
+	};
+
+	handleSubmit = event => {
+		event.preventDefault();
+		this.setState({
+			errorMessage: ''
+		});
+
+		if(this.validateLoginForm()) {
+			alert('Successfully logged');
+		}
+	};
+
+	validateLoginForm = () => {
+		if(!this.state.email || !this.state.password) {
+			this.setState({
+				errorMessage: 'The email or phone number you’ve entered doesn’t match any account.'
+			});
+			return;
+		}
+
+		return true;
+	};
+
 	render() {
 
 		return (
-			<Container>
-				<LoginField name="email" type="email" placeholder="Email" id="email"/>
-				<LoginField name="password" type="password" placeholder="Password" id="password"/>
-				<LoginButton backgroundColor={({theme}) => theme.colors.primaryBlue} backgroundColorHover={({theme}) => theme.colors.primaryDarkBlue} type="submit" text="Sign in"/>
+			<Container isErrorDisplayed={this.state.errorMessage} onSubmit={this.handleSubmit}>
+				<LoginField handleChange={this.handleChange} name="email" type="email" placeholder="Email" id="email"/>
+				<LoginField handleChange={this.handleChange} name="password" type="password" placeholder="Password" id="password"/>
+				<LoginButton handleSubmit={this.handleSubmit} backgroundColor={({theme}) => theme.colors.primaryBlue} backgroundColorHover={({theme}) => theme.colors.primaryDarkBlue} type="submit" text="Sign in"/>
 				<LoginButton onClick={this.props.switchMode} backgroundColor={({theme}) => theme.colors.primaryGreen} backgroundColorHover={({theme}) => theme.colors.primaryDarkGreen} type="button" text="Create new account"/>
 				{this.state.errorMessage ? <LoginErrorMessage message={this.state.errorMessage}/> : null}
 			</Container>
