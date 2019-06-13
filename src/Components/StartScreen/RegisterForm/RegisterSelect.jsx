@@ -36,10 +36,10 @@ const Select = styled.select`
   	}
 `;
 
-const RegisterSelect = ({values= [], placeholder, id}) => {
+const RegisterSelect = ({values= [], placeholder, id, handleChange}) => {
 	return (
 		<Wrapper>
-			<Select name={id} id={id} defaultValue={0}>
+			<Select name={id} id={id} defaultValue={0} onChange={handleChange}>
 				<option key={placeholder} value={0} disabled>{placeholder}</option>
 				{values.map(value => <option key={value} value={value}>{value}</option>)}
 			</Select>
@@ -50,7 +50,8 @@ const RegisterSelect = ({values= [], placeholder, id}) => {
 RegisterSelect.propTypes = {
 	values: PropTypes.array.isRequired,
 	placeholder: PropTypes.string.isRequired,
-	id: PropTypes.string.isRequired
+	id: PropTypes.string.isRequired,
+	handleChange: PropTypes.func
 };
 
 export default RegisterSelect;

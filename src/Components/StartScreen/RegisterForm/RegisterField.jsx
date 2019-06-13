@@ -43,12 +43,14 @@ class RegisterField extends Component {
 			type: this.props.type || 'text'
 		};
 	}
+
 	handleChangeType = () => {
 		this.setState({
 			passwordShown: !this.state.passwordShown,
 			type: this.state.passwordShown ? 'password' : 'text'
 		});
 	};
+
 	render() {
 		const {name, placeholder, id, handleChange} = this.props;
 		return (
@@ -64,7 +66,8 @@ RegisterField.propTypes = {
 	name: PropTypes.string,
 	type: PropTypes.string.isRequired,
 	placeholder: PropTypes.string.isRequired,
-	id: PropTypes.string.isRequired
+	id: PropTypes.string.isRequired,
+	handleChange: PropTypes.func
 };
 
 export default RegisterField;
