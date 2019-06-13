@@ -45,9 +45,7 @@ class StepOne extends Component {
 
 	verifyName = () => {
 		if(this.state.name === '') {
-			this.setState({
-				errors: Object.assign(this.state.errors, {name: 'This field cannot be empty.'})
-			});
+			this.emitEmptyFieldError('name');
 			return false;
 		}
 
@@ -62,9 +60,7 @@ class StepOne extends Component {
 		const EMAIL_REGEX = new RegExp('^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}');
 
 		if(this.state.email === '') {
-			this.setState({
-				errors: Object.assign(this.state.errors, {email: 'This field cannot be empty.'})
-			});
+			this.emitEmptyFieldError('email');
 			return false;
 		}
 		console.log(EMAIL_REGEX.test(this.state.email));
@@ -84,9 +80,7 @@ class StepOne extends Component {
 
 	verifyBirthDate = () => {
 		if(this.state.birthDate === '') {
-			this.setState({
-				errors: Object.assign(this.state.errors, {birthDate: 'This field cannot be empty.'})
-			});
+			this.emitEmptyFieldError('birthDate');
 			return false;
 		}
 		if(moment().diff(this.state.birthDate) < 0) {
@@ -106,6 +100,12 @@ class StepOne extends Component {
 	handleChange = event => {
 		this.setState({
 			[event.target.id]: event.target.value
+		});
+	};
+
+	emitEmptyFieldError = field => {
+		this.setState({
+			errors: Object.assign(this.state.errors, {[field]: 'This field cannot be empty.'})
 		});
 	};
 

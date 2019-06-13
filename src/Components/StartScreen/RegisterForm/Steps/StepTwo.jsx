@@ -9,7 +9,7 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 25rem;
+	min-height: 25rem;
 	margin-top: 3rem;
 `;
 const FieldsContainer = styled.div`
@@ -48,9 +48,7 @@ class StepTwo extends Component {
 
 	verifyPhone = () => {
 		if(this.state.phone === '') {
-			this.setState({
-				errors: Object.assign(this.state.errors, {phone: 'This field cannot be empty.'})
-			});
+			this.emitEmptyFieldError('phone');
 			return false;
 		}
 
@@ -63,9 +61,7 @@ class StepTwo extends Component {
 
 	verifyPassword = () => {
 		if(this.state.password === '') {
-			this.setState({
-				errors: Object.assign(this.state.errors, {password: 'This field cannot be empty.'})
-			});
+			this.emitEmptyFieldError('password');
 			return false;
 		}
 
@@ -83,12 +79,9 @@ class StepTwo extends Component {
 		return true;
 	};
 
-
 	verifyIfValidValue = field => {
 		if(this.state[field] === '') {
-			this.setState({
-				errors: Object.assign(this.state.errors, {[field]: 'This field cannot be empty.'})
-			});
+			this.emitEmptyFieldError(field);
 			return false;
 		}
 
@@ -97,6 +90,12 @@ class StepTwo extends Component {
 		});
 
 		return true;
+	};
+
+	emitEmptyFieldError = field => {
+		this.setState({
+			errors: Object.assign(this.state.errors, {[field]: 'This field cannot be empty.'})
+		});
 	};
 
 	handleChange = event => {
