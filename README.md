@@ -1,6 +1,7 @@
 # React multistep form
 
 This repository contains a simple example of multistep registration form created with React, Redux and Styled Components.
+Available only in a mobile phone view.
 
 ##Installation and run
 
