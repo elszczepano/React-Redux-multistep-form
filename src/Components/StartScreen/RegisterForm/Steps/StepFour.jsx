@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 25rem;
+	height: 20rem;
 	margin-top: 1rem;
 `;
 
@@ -20,19 +21,19 @@ const Icon = styled(FontAwesomeIcon)`
 
 const Summary = styled.p`
 	text-align: center;
+	margin-bottom: 8rem;
 `;
 
 const Bold = styled.span`
 	font-weight: ${({theme}) => theme.font.bold};
-	color: ${({theme}) => theme.color.primaryBlue};
+	color: ${({theme}) => theme.colors.primaryBlue};
 `;
 
 class StepFour extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			step: 4,
-			name: ''
+			step: 4
 		};
 	}
 	render() {
@@ -41,11 +42,17 @@ class StepFour extends Component {
 				<Icon icon='laugh-beam' />
 				<Summary>
 					Registration process finished!<br />
-					<Bold>{this.state.name}</Bold> welcome to <Bold>FindMates</Bold> community!
+					<Bold>{this.props.userDetails.name}</Bold> welcome to <Bold>FindMates</Bold> community!
 				</Summary>
 			</Container>
 		);
 	}
 }
 
-export default StepFour;
+function mapStateToProps(state) {
+	return {
+		userDetails: state.registerForm
+	};
+}
+
+export default connect(mapStateToProps)(StepFour);

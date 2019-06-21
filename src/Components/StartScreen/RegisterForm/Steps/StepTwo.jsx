@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import RegisterField from '../RegisterField';
 import RegisterButton from '../RegisterButton';
 import RegisterSelect from '../RegisterSelect';
@@ -43,7 +44,14 @@ class StepTwo extends Component {
 
 
 		if(isPhoneValid && isPasswordValid && isGenderValid && isPurposeValid) {
+			const userDetails = {
+				phone: this.state.phone,
+				password: this.state.password,
+				gender: this.state.gender,
+				purpose: this.state.purpose
+			};
 			this.props.incrementStep();
+			this.props.dispatch({type: 'ADD_REGISTER_DETAIL', userDetails});
 		}
 	};
 
@@ -124,4 +132,4 @@ class StepTwo extends Component {
 	}
 }
 
-export default StepTwo;
+export default connect()(StepTwo);

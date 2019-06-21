@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import RegisterButton from '../RegisterButton';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import RegisterButton from '../RegisterButton';
 import RegisterFileUpload from '../RegisterFileUpload';
 import ErrorField from '../../ErrorField';
 import UploadedAvatar from '../UploadedAvatar';
-import PropTypes from 'prop-types';
 
 const Container = styled.div`
 	display: flex;
@@ -45,7 +46,6 @@ class StepThree extends Component {
 
 			return;
 		}
-
 		this.setState({
 			avatarError: '',
 			avatar: window.URL.createObjectURL(avatar)
@@ -61,7 +61,10 @@ class StepThree extends Component {
 
 			return;
 		}
-
+		const userDetails = {
+			avatar: this.state.avatar
+		};
+		this.props.dispatch({type: 'ADD_REGISTER_DETAIL', userDetails});
 		this.props.incrementStep();
 	};
 
@@ -81,4 +84,4 @@ StepThree.propTypes = {
 	incrementStep: PropTypes.func.isRequired
 };
 
-export default StepThree;
+export default connect()(StepThree);

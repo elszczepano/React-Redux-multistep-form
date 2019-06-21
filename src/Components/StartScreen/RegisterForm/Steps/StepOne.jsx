@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import { connect } from 'react-redux';
 import RegisterField from '../RegisterField';
 import RegisterButton from '../RegisterButton';
 import ErrorField from '../../ErrorField';
@@ -39,7 +40,13 @@ class StepOne extends Component {
 		const isBirthDateValid = this.verifyBirthDate();
 
 		if(isNameValid && isEmailValid && isBirthDateValid) {
+			const userDetails = {
+				name: this.state.name,
+				email: this.state.email,
+				birthDate: this.state.birthDate
+			};
 			this.props.incrementStep();
+			this.props.dispatch({type: 'ADD_REGISTER_DETAIL', userDetails});
 		}
 	};
 
@@ -129,4 +136,4 @@ StepOne.propTypes = {
 	incrementStep: PropTypes.func.isRequired
 };
 
-export default StepOne;
+export default connect()(StepOne);
