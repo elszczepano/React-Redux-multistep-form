@@ -25,7 +25,7 @@ class LoginForm extends Component {
 		this.state = {
 			email: '',
 			password: '',
-			errorMessage: ''
+			errorMessage: null
 		};
 	};
 
