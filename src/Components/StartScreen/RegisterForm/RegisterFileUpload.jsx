@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Input = styled.input`
 	width: 0.1px;
@@ -18,6 +19,7 @@ const Label = styled.label`
 	text-align: center;
 	color: ${({theme}) => theme.colors.white};
 	cursor: pointer;
+	margin-top: 20px;
 	transition: all .3s; 
 	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 	:hover {
@@ -26,13 +28,17 @@ const Label = styled.label`
 	}
 `;
 
-const RegisterFileUpload = () => {
+const RegisterFileUpload = ({getAvatar}) => {
 	return (
 		<>
 			<Label htmlFor="avatar">Upload avatar</Label>
-			<Input id="avatar" type="file"/>
+			<Input id="avatar" onChange={getAvatar} type="file" accept=".jpg, .jpeg, .png"/>
 		</>
 	);
+};
+
+RegisterFileUpload.propTypes = {
+	getAvatar: PropTypes.func
 };
 
 export default RegisterFileUpload;
