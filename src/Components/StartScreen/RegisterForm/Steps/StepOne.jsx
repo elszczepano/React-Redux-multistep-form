@@ -40,7 +40,6 @@ class StepOne extends Component {
 		if(isNameValid && isEmailValid && isBirthDateValid) {
 			this.props.incrementStep();
 		}
-
 	};
 
 	verifyName = () => {
@@ -63,7 +62,6 @@ class StepOne extends Component {
 			this.emitEmptyFieldError('email');
 			return false;
 		}
-		console.log(EMAIL_REGEX.test(this.state.email));
 		if(!EMAIL_REGEX.test(this.state.email)) {
 			this.setState({
 				errors: Object.assign(this.state.errors, {email: 'This is not valid email address.'})
