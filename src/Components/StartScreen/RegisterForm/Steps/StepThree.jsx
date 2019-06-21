@@ -14,6 +14,7 @@ const Container = styled.div`
 	height: 25rem;
 	margin-top: 1rem;
 `;
+
 const Icon = styled(FontAwesomeIcon)`
 	width: 100% !important;
     font-size: 140px;
@@ -51,7 +52,8 @@ class StepThree extends Component {
 		});
 	};
 
-	verifyStepThree = () => {
+	verifyStepThree = event => {
+		event.preventDefault();
 		if(!this.state.avatar) {
 			this.setState({
 				avatarError: 'This field cannot be empty.'

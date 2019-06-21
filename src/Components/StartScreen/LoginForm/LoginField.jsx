@@ -25,12 +25,14 @@ const Input = styled.input`
   		font-size: 18px;
   	}
 `;
+
 const Icon = styled(FontAwesomeIcon)`
 	color: ${({theme}) => theme.colors.darkGrey};
 	position: absolute;
 	top: 35%;
 	right: 5%;
 `;
+
 const Wrapper = styled.div`
 	position: relative;
 	:last-of-type {

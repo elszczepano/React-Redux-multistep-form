@@ -10,6 +10,7 @@ const Input = styled.input`
 	position: absolute;
 	z-index: -1;
 `;
+
 const Label = styled.label`
 	background-color: ${({theme}) => theme.colors.primaryGreen}
 	border: none;

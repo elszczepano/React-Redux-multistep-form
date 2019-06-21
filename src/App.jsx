@@ -5,9 +5,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import rootReducer from './reducers';
-import {faUser, faFileAlt, faEye, faEyeSlash, faUserCircle, faFileImage} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faFileAlt, faEye, faEyeSlash, faUserCircle, faFileImage, faLaughBeam} from '@fortawesome/free-solid-svg-icons';
 import StartScreen from './Containers/StartScreen';
-library.add(faUser, faFileAlt, faEye, faEyeSlash, faUserCircle, faFileImage);
+library.add(faUser, faFileAlt, faEye, faEyeSlash, faUserCircle, faFileImage, faLaughBeam);
 
 const store = createStore(rootReducer, composeWithDevTools());
 

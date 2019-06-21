@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   		color: ${({theme}) => theme.colors.grey};
 	}
 `;
+
 const Select = styled.select`
 	background-color: ${({theme}) => theme.colors.lightGrey};
 	border-radius: 3px;

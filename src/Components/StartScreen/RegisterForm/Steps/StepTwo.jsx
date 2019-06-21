@@ -12,6 +12,7 @@ const Container = styled.div`
 	min-height: 25rem;
 	margin-top: 3rem;
 `;
+
 const FieldsContainer = styled.div`
 	display: grid;
 	grid-template-rows: 1fr;
