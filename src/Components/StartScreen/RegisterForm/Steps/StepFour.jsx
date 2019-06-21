@@ -21,7 +21,9 @@ const Icon = styled(FontAwesomeIcon)`
 
 const Summary = styled.p`
 	text-align: center;
-	margin-bottom: 8rem;
+	margin-bottom: 5rem;
+    margin-top: -1rem;
+    font-size: 20px;
 `;
 
 const Bold = styled.span`

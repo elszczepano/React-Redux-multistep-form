@@ -6,6 +6,7 @@ const Avatar = styled.div`
 	margin: 0 auto;
 	width: 250px;
 	height: 250px;
+	border-radius: 50%;
 	background-image: url('${({image}) => image}');
 	background-position: center;
 	background-size: cover;
