@@ -37,7 +37,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "husky": "^2.4.1",
+    "husky": "^2.5.0",
     "lint-staged": "^8.2.1",
     "redux-devtools-extension": "^2.13.8"
   },
